@@ -1,0 +1,8 @@
+# 4.2.3. Athletes with the highest number of gold medals
+SELECT Name,
+COUNT(Medal) AS medals
+FROM athlete_events
+WHERE Medal='Gold'
+GROUP BY Name
+ORDER BY medals DESC
+LIMIT 10;
