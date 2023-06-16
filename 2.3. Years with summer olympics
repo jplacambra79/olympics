@@ -1,0 +1,5 @@
+# 2.3. Years with summer olympics
+SELECT DISTINCT Year
+FROM athlete_events
+WHERE Season = 'Summer'
+ORDER BY Year;
