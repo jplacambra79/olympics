@@ -1,0 +1,11 @@
+# 4.1. Total number of medals by type
+SELECT Medal,
+COUNT(Medal) AS medal_type,
+ROUND((SELECT COUNT(Medal) AS medal_type)/
+(SELECT COUNT(Medal)
+FROM athlete_events
+WHERE Medal IN ('Gold','Silver','Bronze')),2) AS '%'
+FROM athlete_events
+WHERE Medal IN ('Gold','Silver','Bronze')
+GROUP BY Medal
+ORDER BY '%' DESC;
