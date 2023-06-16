@@ -1,0 +1,5 @@
+# 3.1. total count of athletes by year
+SELECT Year,
+COUNT(DISTINCT Name) AS athletes
+FROM athlete_events
+GROUP BY Year;
