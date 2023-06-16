@@ -1,0 +1,8 @@
+# 3.1.1. Olympic games with highest number of athletes by year
+SELECT Year, 
+Season,
+COUNT(DISTINCT Name) AS athletes
+FROM athlete_events
+GROUP BY Year,Season
+ORDER BY athletes DESC
+LIMIT 10;
