@@ -1,0 +1,8 @@
+# 4.2.2. Number of gold medals by event
+SELECT Sport,
+COUNT(Medal) AS medals
+FROM athlete_events
+WHERE Medal='Gold'
+GROUP BY Sport,
+Medal
+ORDER BY medals DESC;
