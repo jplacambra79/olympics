@@ -1,0 +1,7 @@
+# 4.4. Athletes olympic games participations 
+SELECT DISTINCT Name AS athlete,
+Sex,
+COUNT(Games) OVER (PARTITION BY Name) AS olympics
+FROM athlete_events
+ORDER BY olympics DESC; 
+
