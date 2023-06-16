@@ -1,0 +1,5 @@
+# 4. Total number of medals
+SELECT
+COUNT(Medal)
+FROM athlete_events
+WHERE Medal IN ('Gold','Silver','Bronze');
