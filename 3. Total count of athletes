@@ -1,33 +1,4 @@
 # 3.total count of athletes
 SELECT COUNT(DISTINCT Name)
 FROM athlete_events;
-# 3.1. total count of athletes by year
-SELECT Year,
-COUNT(DISTINCT Name) AS athletes
-FROM athlete_events
-GROUP BY Year;
-# 3.1.1. Olympic games with highest number of athletes by year
-SELECT Year, 
-Season,
-COUNT(DISTINCT Name) AS athletes
-FROM athlete_events
-GROUP BY Year,Season
-ORDER BY athletes DESC
-LIMIT 10;
-# 3.2. Proportion of men and women athletes
-# 3.2.1. Proportion of men
-SET @men_athletes = (SELECT (SELECT COUNT(DISTINCT Name)
-FROM athlete_events
-WHERE Sex = 'M')/(SELECT 
-COUNT(DISTINCT Name)
-FROM athlete_events));
 
-SELECT ROUND(@men_athletes,2);
-# 3.2.2. Proportion of women
-SET @women_athletes = (SELECT (SELECT COUNT(DISTINCT Name)
-FROM athlete_events
-WHERE Sex = 'F')/(SELECT 
-COUNT(DISTINCT Name)
-FROM athlete_events));
-
-SELECT ROUND(@women_athletes,2);
