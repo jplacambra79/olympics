@@ -1,0 +1,4 @@
+# 1.1. Years with olympics between 1896-2016 
+SELECT DISTINCT Year
+FROM athlete_events
+ORDER BY Year;
