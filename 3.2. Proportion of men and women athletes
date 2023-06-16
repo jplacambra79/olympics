@@ -1,0 +1,17 @@
+# 3.2. Proportion of men and women athletes
+# 3.2.1. Proportion of men
+SET @men_athletes = (SELECT (SELECT COUNT(DISTINCT Name)
+FROM athlete_events
+WHERE Sex = 'M')/(SELECT 
+COUNT(DISTINCT Name)
+FROM athlete_events));
+
+SELECT ROUND(@men_athletes,2);
+# 3.2.2. Proportion of women
+SET @women_athletes = (SELECT (SELECT COUNT(DISTINCT Name)
+FROM athlete_events
+WHERE Sex = 'F')/(SELECT 
+COUNT(DISTINCT Name)
+FROM athlete_events));
+
+SELECT ROUND(@women_athletes,2);
