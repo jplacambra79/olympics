@@ -1,0 +1,5 @@
+# 2.2. Total years with summer olympics 
+SELECT 
+COUNT(DISTINCT Year) AS summer_olympics_
+FROM athlete_events
+WHERE Season = 'Summer';
