@@ -1,0 +1,10 @@
+# 5. Hosting and next hosting cities 
+WITH hosting_city AS (SELECT DISTINCT Year,
+City FROM athlete_events)
+
+SELECT Year,
+City,
+LEAD (City,1) OVER (ORDER BY Year ASC) next_city,
+LEAD(City,2) OVER (ORDER BY Year ASC) after_next_city
+FROM hosting_city
+ORDER BY Year ASC;
