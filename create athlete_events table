@@ -1,0 +1,17 @@
+# create athlete_events table
+CREATE TABLE athlete_events(id INT,
+name_ VARCHAR(100),
+sex VARCHAR(10),
+age INT,
+height INT,
+weight INT,
+team VARCHAR(100),
+noc VARCHAR(10),
+games VARCHAR(100),
+year_ INT,
+season VARCHAR(100),
+city VARCHAR(100),
+sport VARCHAR(100),
+event_ VARCHAR(100),
+medal VARCHAR(10),
+PRIMARY KEY (id));
