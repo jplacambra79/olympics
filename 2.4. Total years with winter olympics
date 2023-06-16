@@ -1,0 +1,4 @@
+# 2.4. Total years with winter olympics  
+SELECT COUNT(DISTINCT Year) AS winter_olympics_ 
+FROM athlete_events 
+WHERE Season = 'Winter'; 
