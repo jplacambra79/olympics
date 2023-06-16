@@ -1,0 +1,31 @@
+# 2. Total Summer and winter olympics between 1896-2016
+SELECT (SELECT COUNT(DISTINCT Year)
+FROM athlete_events
+WHERE Season = 'Summer')+(SELECT COUNT(DISTINCT Year) 
+FROM athlete_events
+WHERE Season = 'Winter') AS total_olympic_events;
+# 2.1. Years with summer and winter olympics between 1896-2016 
+SELECT Year,
+COUNT( DISTINCT Season) AS count_
+FROM athlete_events
+GROUP BY Year;
+# 2.2. Total years with summer olympics 
+SELECT 
+COUNT(DISTINCT Year) AS summer_olympics_
+FROM athlete_events
+WHERE Season = 'Summer';
+# 2.3. Years with summer olympics
+SELECT DISTINCT Year
+FROM athlete_events
+WHERE Season = 'Summer'
+ORDER BY Year;
+# 2.4. Total years with winter olympics 
+SELECT
+COUNT(DISTINCT Year) AS winter_olympics_
+FROM athlete_events
+WHERE Season = 'Winter';
+# 2.5. Years with winter olympics
+SELECT DISTINCT Year
+FROM athlete_events
+WHERE Season = 'Winter'
+ORDER BY Year;
