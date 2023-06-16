@@ -1,0 +1,5 @@
+# 2.1. Years with summer and winter olympics between 1896-2016 
+SELECT Year,
+COUNT( DISTINCT Season) AS count_
+FROM athlete_events
+GROUP BY Year;
