@@ -1,0 +1,18 @@
+# 6. Champion and last champion countries by sport and gender 
+WITH champions_sport AS (SELECT Year,
+athlete_events.Sport,
+athlete_events.Sex,
+noc_regions.region AS champion
+FROM athlete_events
+LEFT JOIN noc_regions
+ON athlete_events.NOC=noc_regions.noc
+WHERE Medal='Gold'
+ORDER BY Year DESC)
+
+SELECT Year,
+Sport,
+Sex,
+champion,
+LAG(champion,1) OVER (PARTITION BY Sex ORDER BY Year DESC) AS last_champion
+FROM champions_sport
+ORDER BY Year DESC ;
