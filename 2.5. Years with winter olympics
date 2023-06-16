@@ -1,0 +1,5 @@
+# 2.5. Years with winter olympics 
+SELECT DISTINCT Year 
+FROM athlete_events 
+WHERE Season = 'Winter' 
+ORDER BY Year;
