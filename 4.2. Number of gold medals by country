@@ -1,0 +1,11 @@
+# 4.2. Number of gold medals by country
+SELECT noc_regions.region,
+COUNT(athlete_events.Medal) AS medals
+FROM athlete_events
+LEFT JOIN noc_regions
+ON athlete_events.NOC=noc_regions.noc
+WHERE Medal='Gold'
+GROUP BY noc_regions.region,
+athlete_events.NOC,
+athlete_events.Medal
+ORDER BY medals DESC;
